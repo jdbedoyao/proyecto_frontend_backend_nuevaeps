@@ -1,12 +1,12 @@
-\# Sistema de Gestión y Consulta de Solicitudes de Medicamentos para Nueva EPS S.A
+# Sistema de Gestión y Consulta de Solicitudes de Medicamentos para Nueva EPS S.A
 
 Este proyecto es una solución full-stack distribuida en microservicios backend desarrollados en \*\*Spring Boot\*\* y una aplicación frontend moderna construida con \*\*Angular\*\*. Permite a los usuarios registrarse, autenticarse mediante JWT, realizar solicitudes de medicamentos (POS y NO POS con validación dinámica) y consultar el historial de solicitudes asociadas a su cuenta.
 
 \---
 
-\## 🛠️ Detalles del Entorno de Ejecución
+## 🛠️ Detalles del Entorno de Ejecución
 
-\### Prerrequisitos
+### Prerrequisitos
 
 \- \*\*Java Development Kit (JDK):\*\* Versión 21 o superior.
 
@@ -32,9 +32,9 @@ Este proyecto es una solución full-stack distribuida en microservicios backend 
 
 \---
 
-\## 🚀 Instrucciones de Instalación y Ejecución
+## 🚀 Instrucciones de Instalación y Ejecución
 
-\### 1. Clonar el Repositorio
+### 1. Clonar el Repositorio
 
 \`\`\`bash
 
