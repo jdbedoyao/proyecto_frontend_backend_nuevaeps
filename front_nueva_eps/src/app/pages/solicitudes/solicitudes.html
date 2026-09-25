@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Registrar Solicitud de Medicamento</h2>
+    <div class="d-flex justify-content-left gap-1">
+      <button class="btn btn-outline-info" (click)="listarSolicitudes()">Solicitudes Realizadas</button>
+      <button class="btn btn-outline-danger" (click)="authService.logout()">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <div *ngIf="mensajeExito" class="alert alert-success">{{ mensajeExito }}</div>
+  <div *ngIf="mensajeError" class="alert alert-danger">{{ mensajeError }}</div>
+
+  <form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()" class="card p-4 shadow-sm">
+    
+    <!-- Selección de Medicamento -->
+    <div class="mb-3">
+      <label class="form-label">Medicamento</label>
+      <select formControlName="medicamentoId" class="form-select" (change)="onMedicamentoChange($event)">
+        <option value="">-- Seleccione un medicamento --</option>
+        <option *ngFor="let med of medicamentos" [value]="med.id">
+          {{ med.nombre }} ({{ med.esPos ? 'POS' : 'NO POS' }})
+        </option>
+      </select>
+    </div>
+
+    <!-- Campos Condicionales Visibles Únicamente para NO POS -->
+    <div *ngIf="esNoPos" class="border p-3 rounded mb-3 bg-light">
+      <h5 class="text-warning">Campos Requeridos para Medicamento NO POS</h5>
+
+      <div class="mb-3">
+        <label class="form-label">Número de Orden / Fórmula</label>
+        <input type="text" formControlName="numeroOrden" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Dirección de Entrega</label>
+        <input type="text" formControlName="direccion" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Teléfono de Contacto</label>
+        <input type="text" formControlName="telefono" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Correo Electrónico</label>
+        <input type="email" formControlName="correo" class="form-control">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="solicitudForm.invalid">
+      Enviar Solicitud
+    </button>
+  </form>
+</div>

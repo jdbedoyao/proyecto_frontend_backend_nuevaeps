@@ -1,0 +1,397 @@
+{
+  "info": {
+    "_postman_id": "561e9c14-bd71-416d-8e11-79fbb8229c45",
+    "name": "NuevaEPS_solicitudes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14078123"
+  },
+  "item": [
+    {
+      "name": "medicamentos",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:10082/api/solicitudes/medicamentos",
+          "host": [
+            "localhost"
+          ],
+          "port": "10082",
+          "path": [
+            "api",
+            "solicitudes",
+            "medicamentos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "medicamentos",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:10082/api/solicitudes/medicamentos",
+              "host": [
+                "localhost"
+              ],
+              "port": "10082",
+              "path": [
+                "api",
+                "solicitudes",
+                "medicamentos"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 24 Sep 2026 22:34:21 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"descripcion\": \"Analgésico y antipirético\",\n        \"esPos\": true,\n        \"id\": 1,\n        \"nombre\": \"Acetaminofén 500mg\"\n    },\n    {\n        \"descripcion\": \"Antiinflamatorio no esteroideo\",\n        \"esPos\": true,\n        \"id\": 2,\n        \"nombre\": \"Ibuprofeno 800mg\"\n    },\n    {\n        \"descripcion\": \"Tratamiento oncológico de alta especialidad\",\n        \"esPos\": false,\n        \"id\": 3,\n        \"nombre\": \"Trastuzumab 440mg\"\n    },\n    {\n        \"descripcion\": \"Inmunoterapia para tratamiento complejo\",\n        \"esPos\": false,\n        \"id\": 4,\n        \"nombre\": \"Pembrolizumab 100mg\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "crearsolicitud",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_1369}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"medicamentoId\" : 1,\n    \"numeroOrden\"  :\"ORD-12345\",\n    \"direccion\" : \"10770623\",\n    \"telefono\" : \"3146816670\",\n    \"correo\" : \"jd_bedoyao@yahoo.es\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:10082/api/solicitudes",
+          "host": [
+            "localhost"
+          ],
+          "port": "10082",
+          "path": [
+            "api",
+            "solicitudes"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "crearsolicitud",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"medicamentoId\" : 1,\n    \"numeroOrden\"  :\"ORD-12345\",\n    \"direccion\" : \"10770623\",\n    \"telefono\" : \"3146816670\",\n    \"correo\" : \"jd_bedoyao@yahoo.es\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:10082/api/solicitudes",
+              "host": [
+                "localhost"
+              ],
+              "port": "10082",
+              "path": [
+                "api",
+                "solicitudes"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 24 Sep 2026 22:46:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"correo\": \"jd_bedoyao@yahoo.es\",\n    \"direccion\": \"10770623\",\n    \"fechaSolicitud\": \"2026-09-24T17:46:56.7225574\",\n    \"id\": 1,\n    \"medicamento\": {\n        \"descripcion\": \"Analgésico y antipirético\",\n        \"esPos\": true,\n        \"id\": 1,\n        \"nombre\": \"Acetaminofén 500mg\"\n    },\n    \"numeroOrden\": \"ORD-12345\",\n    \"telefono\": \"3146816670\",\n    \"usuarioId\": 2\n}"
+        }
+      ]
+    },
+    {
+      "name": "obtenersolicitudes",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\"  :\"jdbedoyaortiz@gmail.com\",\n    \"password\" : \"10770623\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:10082/",
+          "host": [
+            "localhost"
+          ],
+          "port": "10082",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "obtenersolicitudes",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\"  :\"jdbedoyaortiz@gmail.com\",\n    \"password\" : \"10770623\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:10082/api/solicitudes",
+              "host": [
+                "localhost"
+              ],
+              "port": "10082",
+              "path": [
+                "api",
+                "solicitudes"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 25 Sep 2026 12:49:28 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"correo\": \"jd_bedoyao@yahoo.es\",\n        \"direccion\": \"10770623\",\n        \"fechaSolicitud\": \"2026-09-24T17:46:57\",\n        \"id\": 1,\n        \"medicamento\": {\n            \"descripcion\": \"Analgésico y antipirético\",\n            \"esPos\": true,\n            \"id\": 1,\n            \"nombre\": \"Acetaminofén 500mg\"\n        },\n        \"numeroOrden\": \"ORD-12345\",\n        \"telefono\": \"3146816670\",\n        \"usuarioId\": 2\n    },\n    {\n        \"correo\": \"\",\n        \"direccion\": \"\",\n        \"fechaSolicitud\": \"2026-09-25T07:11:59\",\n        \"id\": 2,\n        \"medicamento\": {\n            \"descripcion\": \"Analgésico y antipirético\",\n            \"esPos\": true,\n            \"id\": 1,\n            \"nombre\": \"Acetaminofén 500mg\"\n        },\n        \"numeroOrden\": \"\",\n        \"telefono\": \"\",\n        \"usuarioId\": 2\n    },\n    {\n        \"correo\": \"jd_bedoyao@yahoo.es\",\n        \"direccion\": \"Calle 70 Bis sur # 87c - 33\",\n        \"fechaSolicitud\": \"2026-09-25T07:18:10\",\n        \"id\": 3,\n        \"medicamento\": {\n            \"descripcion\": \"Inmunoterapia para tratamiento complejo\",\n            \"esPos\": false,\n            \"id\": 4,\n            \"nombre\": \"Pembrolizumab 100mg\"\n        },\n        \"numeroOrden\": \"AC123456\",\n        \"telefono\": \"3146816670\",\n        \"usuarioId\": 2\n    }\n]"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_secret_1369",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0dvu",
+      "secret": true
+    }
+  ]
+}

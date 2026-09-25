@@ -1,0 +1,57 @@
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Consulta de Solicitudes</h2>
+    <div>
+      <a routerLink="/solicitudes" class="btn btn-outline-primary me-2">Nueva Solicitud</a>
+      <button class="btn btn-outline-danger" (click)="authService.logout()">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <div *ngIf="cargando" class="text-center my-4">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+
+  <div *ngIf="mensajeError" class="alert alert-danger">
+    {{ mensajeError }}
+  </div>
+
+  <div *ngIf="!cargando && solicitudes.length === 0" class="alert alert-info">
+    No se han encontrado solicitudes registradas.
+  </div>
+
+  <div *ngIf="!cargando && solicitudes.length > 0" class="table-responsive card shadow-sm p-3">
+    <table class="table table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Medicamento</th>
+          <th>Tipo</th>
+          <th>N° Orden</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Correo</th>
+          <th>Fecha</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sol of solicitudes">
+          <td>{{ sol.id }}</td>
+          <td><strong>{{ sol.medicamento?.nombre || sol.nombreMedicamento || sol.medicamentoId }}</strong></td>
+          <td>
+            <span class="badge" [ngClass]="(sol.esPos || sol.medicamento?.esPos) ? 'bg-success' : 'bg-warning text-dark'">
+              {{ (sol.esPos || sol.medicamento?.esPos) ? 'POS' : 'NO POS' }}
+            </span>
+          </td>
+          <td>{{ sol.numeroOrden || '-' }}</td>
+          <td>{{ sol.direccion || '-' }}</td>
+          <td>{{ sol.telefono || '-' }}</td>
+          <td>{{ sol.correo || '-' }}</td>
+          <td>{{ sol.fechaSolicitud || '-' }}</td>          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
